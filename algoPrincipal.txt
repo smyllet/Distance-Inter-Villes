@@ -1,0 +1,42 @@
+Algorithme "Distance Inter Ville"
+Variable : CC : depart, arrive, input
+		   Numérique : departIndex, arriveIndex, dist
+		   Boolean : fin
+Variable Indicée : ville[10]:CC, distance[10][10]:Numérique
+Debut
+	fin <- faux
+	ville <- [[0,996,723,890,1286,305,564,245,1026,884],[-1,0,750,104,286,711,576,747,505,543],[-1,-1,0,668,979,593,224,515,524,905],[-1,-1,-1,0,316,607,472,645,434,467],[-1,-1,-1,-1,0,890,769,938,750,400],[-1,-1,-1,-1,-1,0,386,106,832,559],[-1,-1,-1,-1,-1,-1,0,348,447,681],[-1,-1,-1,-1,-1,-1,-1,0,799,665],[-1,-1,-1,-1,-1,-1,-1,-1,0,901],[-1,-1,-1,-1,-1,-1,-1,-1,-1,0]]
+	
+	Afficher "Bienvenue dans le programme d'optention des distances interville"
+	
+	TanQue(fin = faux)
+		Afficher "Quelle est votre ville de départ ?"
+		Saisir depart
+		departIndex <- indexVille(ville,depart)
+		TanQue(departIndex = -1)
+			Afficher "Erreur, quelle est votre ville de départ ?"
+			Saisir depart
+			departIndex <- indexVille(ville,depart)
+		FinTanQue
+		
+		Afficher "Quelle est votre ville d'arriver ?"
+		Saisir arrive
+		arriveIndex <- indexVille(ville,arrive)
+		TanQue(arriveIndex = -1)
+			Afficher "Erreur, quelle est votre ville d'arrivé ?"
+			Saisir arrive
+			arriveIndex <- indexVille(ville,arrive)
+		FinTanQue
+		
+		dist <- distance[departIndex][arriveIndex]
+		Si (dist = -1) dist <- distance[arriveIndex][departIndex]
+		
+		Afficher "La distance entre ", depart, " et ", arrive, " est de ", dist, "km"
+		Saisir input
+		Afficher "Souhaitez vous continuer ? (oui/non)"
+		TanQue
+			Afficher "La distance entre ", depart, " et ", arrive, " est de ", dist, "km"
+			Saisir input
+		FinTanQue
+		Si (input = "non") alors fin <- vrai
+	FinTanQue
