@@ -1,0 +1,8 @@
+Fonction indexVille(CC : listVille[], CC : ville)
+variable : Numérique : i
+Debut
+	Pour i allant de 1 à 10
+		Si(ville = listVille[i]) alors retourner i
+	FinPour
+	retourner -1
+Fin
