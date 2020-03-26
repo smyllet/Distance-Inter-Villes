@@ -40,3 +40,4 @@ Debut
 		FinTanQue
 		Si (input = "non") alors fin <- vrai
 	FinTanQue
+Fin
